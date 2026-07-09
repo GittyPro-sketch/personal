@@ -854,6 +854,104 @@ input[type="range"].cap-slider::-moz-range-thumb {
 }
 .nav-inner nav a.active-link { color: var(--brass-dim); }
 
+/* ---------- Projects showcase ---------- */
+.project-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 32px;
+  align-items: start;
+}
+@media (max-width: 640px) { .project-card { grid-template-columns: 1fr; gap: 20px; } }
+.project-thumb {
+  aspect-ratio: 4/3;
+  border-radius: 3px;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--hairline-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline-dark) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.4;
+}
+.project-thumb .mark {
+  position: relative;
+  font-family: var(--display);
+  font-size: 15px;
+  color: var(--brass);
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.15;
+}
+.project-body .course-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brass-dim);
+  margin-bottom: 8px;
+}
+.project-body h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.project-body p {
+  color: var(--slate);
+  font-size: 14.5px;
+  margin: 0 0 18px;
+  max-width: 520px;
+}
+.project-feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.project-feature-row span {
+  font-family: var(--mono);
+  font-size: 11px;
+  border: 1px solid var(--hairline);
+  padding: 5px 10px;
+  border-radius: 2px;
+  color: var(--charcoal);
+}
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ivory);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 11px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.project-link-btn:hover { background: var(--brass-dim); border-color: var(--brass-dim); }
+
 /* ---------- Contact / footer ---------- */
 footer {
   background: var(--ink);
@@ -959,6 +1057,7 @@ footer .fine {
       <a href="#experience">Experience</a>
       <a href="#extracurricular">Involvement</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#game">Play</a>
       <a href="blog.html">Notes</a>
       <a href="#contact">Contact</a>
@@ -1266,6 +1365,43 @@ footer .fine {
         </div>
 
         <div class="game-round-count" id="roundCount">Deal 1 of 6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS — showcases tools built for coursework
+     ============================================================ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="line-tag"><span class="num">L07</span> Independent Builds</div>
+      <h2>Study Tools</h2>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb">
+        <div class="mark">AFM<br>274</div>
+      </div>
+      <div class="project-body">
+        <div class="course-tag">AFM 274 · Corporate Finance</div>
+        <h3>The Corporate Finance Studio</h3>
+        <p>
+          A self-built study tool for AFM 274, styled after the same ledger
+          aesthetic as this site. Built to turn payout policy, valuation with
+          leverage, and capital structure concepts into something interactive
+          rather than static notes.
+        </p>
+        <div class="project-feature-row">
+          <span>Payout Policy</span>
+          <span>Valuation w/ Leverage</span>
+          <span>Capital Structure</span>
+          <span>Interactive Review</span>
+        </div>
+        <a class="project-link-btn" href="https://slowncalm.github.io/FinanceStudies/" target="_blank" rel="noopener">
+          Launch the Studio →
+        </a>
       </div>
     </div>
   </div>
